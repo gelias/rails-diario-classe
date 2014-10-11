@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DiarioClasse</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<td><%= link_to 'Presenças', :presencas %></td>
+	<td><%= link_to 'Estudantes', :estudantes %></td>
+	<td><%= link_to 'Disciplinas', :disciplinas %></td>
+	<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Estudante:</strong>
+  <%= @presenca.estudante.nome %>
+</p>
+
+<p>
+  <strong>Disciplina:</strong>
+  <%= @presenca.disciplina.nome %>
+</p>
+
+<%= link_to 'Edit', edit_presenca_path(@presenca) %> |
+<%= link_to 'Back', presencas_path %>

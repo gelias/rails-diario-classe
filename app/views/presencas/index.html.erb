@@ -1,0 +1,27 @@
+<h1>Listing presencas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Estudante</th>
+      <th>Disciplina</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @presencas.each do |presenca| %>
+      <tr>
+        <td><%= presenca.estudante.nome %></td>
+        <td><%= presenca.disciplina.nome %></td>
+        <td><%= link_to 'Show', presenca %></td>
+        <td><%= link_to 'Edit', edit_presenca_path(presenca) %></td>
+        <td><%= link_to 'Destroy', presenca, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Presenca', new_presenca_path %>

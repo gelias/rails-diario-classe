@@ -1,0 +1,28 @@
+<%= form_for(@presenca) do |f| %>
+  <% if @presenca.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@presenca.errors.count, "error") %> prohibited this presenca from being saved:</h2>
+
+      <ul>
+      <% @presenca.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :estudante_id %><br>
+    <%= collection_select(:presenca, :estudante_id, @estudantes, :id, :nome) %>
+
+  </div>
+  <div class="field">
+    <%= f.label :disciplina_id %><br>
+
+    <%= collection_select(:presenca, :disciplina_id, @disciplinas, :id, :nome) %>
+
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
